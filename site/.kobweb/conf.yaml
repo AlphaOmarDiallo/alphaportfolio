@@ -1,0 +1,14 @@
+site:
+  title: "Alpha_portfolio"
+
+server:
+  files:
+    dev:
+      contentRoot: "build/processedResources/js/main/public"
+      script: "build/kotlin-webpack/js/developmentExecutable/alphaportfolio.js"
+      api: "build/libs/alphaportfolio.jar"
+    prod:
+      script: "build/kotlin-webpack/js/productionExecutable/alphaportfolio.js"
+      siteRoot: ".kobweb/site"
+
+  port: 8080
