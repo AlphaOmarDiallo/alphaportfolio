@@ -1,5 +1,5 @@
 site:
-  title: "Alpha_portfolio"
+  title: "Alpha Diallo - Android dev"
 
 server:
   files:
@@ -11,4 +11,4 @@ server:
       script: "build/kotlin-webpack/js/productionExecutable/alphaportfolio.js"
       siteRoot: ".kobweb/site"
 
-  port: 8080
+  port: 8082
