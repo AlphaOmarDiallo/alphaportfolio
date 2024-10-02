@@ -47,53 +47,6 @@ fun TopAppBar() {
         // Right side displaying name and job title
         Row(verticalAlignment = Alignment.CenterVertically) {
             when (breakpoint) {
-                Breakpoint.LG -> {
-                    Span(
-                        mediumTitleStyle.toModifier()
-                            .whiteSpace(WhiteSpace.PreWrap)
-                            .textAlign(TextAlign.Center)
-                            .padding(leftRight = SitePaddings.SMALL_PADDING)
-                            .toAttrs()
-                    ) {
-                        Span(
-                            attrs = {
-                                style {
-                                    color(Color.lightgreen)
-                                }
-                            }
-                        ) {
-                            Text("A")
-                        }
-                        Text("lpha ")
-                        Span(
-                            attrs = {
-                                style {
-                                    color(Color.lightgreen)
-                                }
-                            }
-                        ) {
-                            Text("D")
-                        }
-                        Text("iallo")
-                    }
-                    Span(
-                        mediumTitleStyle.toModifier()
-                            .whiteSpace(WhiteSpace.PreWrap)
-                            .textAlign(TextAlign.Center)
-                            .color(Color.lightgreen)
-                            .toAttrs()
-                    ) {
-                        Text("|")
-                    }
-                    Span(
-                        smallTitleStyle.toModifier()
-                            .whiteSpace(WhiteSpace.PreWrap)
-                            .textAlign(TextAlign.Center)
-                            .toAttrs()
-                    ) {
-                        Text(" Android Developer")
-                    }
-                }
                 Breakpoint.ZERO -> {
                     Span(
                         mediumTitleStyle.toModifier()

@@ -15,6 +15,7 @@ silk-foundation = { module = "com.varabyte.kobweb:silk-foundation", version.ref 
 silk-icons-fa = { module = "com.varabyte.kobwebx:silk-icons-fa", version.ref = "kobweb" }
 silk-icons-mdi = { module = "com.varabyte.kobwebx:silk-icons-mdi", version.ref = "kobweb" }
 
+
 [plugins]
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kobweb-application = { id = "com.varabyte.kobweb.application", version.ref = "kobweb" }

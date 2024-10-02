@@ -2,6 +2,7 @@ package com.alphaomardiallo.alphaportfolio.styles
 
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.modifiers.fontFamily
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.fontWeight
 import com.varabyte.kobweb.compose.ui.modifiers.lineHeight
@@ -17,6 +18,7 @@ val largeTitleStyle = CssStyle.base {
         .fontSize(4.cssRem)
         .margin(top = 0.4.em, bottom = 0.6.em)
         .fontWeight(FontWeight.Bold)
+        .fontFamily("JetBrains Mono, monospace")
 }
 
 val mediumTitleStyle = CssStyle.base {
@@ -25,6 +27,7 @@ val mediumTitleStyle = CssStyle.base {
         .fontSize(1.5.cssRem)
         .margin(top = 0.4.em, bottom = 0.6.em)
         .fontWeight(FontWeight.Bold)
+        .fontFamily("JetBrains Mono, monospace")
 }
 
 val smallTitleStyle = CssStyle.base {
@@ -33,4 +36,5 @@ val smallTitleStyle = CssStyle.base {
         .fontSize(1.2.cssRem)
         .margin(top = 0.4.em, bottom = 0.6.em)
         .fontWeight(FontWeight.Medium)
+        .fontFamily("JetBrains Mono, monospace")
 }
