@@ -18,7 +18,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.color
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
+import com.varabyte.kobweb.compose.ui.modifiers.fillMaxHeight
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.modifiers.textAlign
@@ -75,7 +75,7 @@ fun PresentationSection(breakpoint: Breakpoint = rememberBreakpoint()) {
             modifier = Modifier.fillMaxWidth().padding(leftRight = SitePaddings.MEDIUM_PADDING),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            if (breakpoint >= Breakpoint.LG) {
+            if (breakpoint >= Breakpoint.MD) {
                 AlphaPhoto()
                 Div(
                     attrs = {
@@ -159,10 +159,13 @@ private fun Presentation(breakpoint: Breakpoint = rememberBreakpoint()) {
         }
     ) {
         Column(
-            modifier = Modifier.fillMaxSize().padding(
-                leftRight = SitePaddings.MEDIUM_PADDING,
-                topBottom = SitePaddings.LARGE_PADDING
-            ),
+            modifier =
+            Modifier.fillMaxHeight()
+                .fillMaxWidth(if (breakpoint >= Breakpoint.LG) 90.percent else 100.percent)
+                .padding(
+                    leftRight = SitePaddings.MEDIUM_PADDING,
+                    topBottom = SitePaddings.LARGE_PADDING
+                ),
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Bottom
         ) {

@@ -85,7 +85,7 @@ fun TopAppBar() {
                             .textAlign(TextAlign.Center)
                             .toAttrs()
                     ) {
-                        Text(" Android Dev")
+                        Text(" Alpha Diallo")
                     }
                 }
             }
