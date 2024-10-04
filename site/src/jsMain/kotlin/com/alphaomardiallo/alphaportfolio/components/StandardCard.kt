@@ -19,8 +19,8 @@ fun StandardCard(
     id: String,
     width: CSSSizeValue<CSSUnit.px> = 590.px,
     backgroundColor: CSSColorValue = Color.white,
-    content: @Composable () -> Unit) {
-
+    content: @Composable () -> Unit
+) {
     Div (
         attrs = {
             id(id)

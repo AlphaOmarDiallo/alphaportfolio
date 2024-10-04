@@ -1,20 +1,27 @@
 package com.alphaomardiallo.alphaportfolio.components
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import com.alphaomardiallo.alphaportfolio.styles.CardHeights
 import com.alphaomardiallo.alphaportfolio.styles.SiteBorderRadius
 import com.alphaomardiallo.alphaportfolio.styles.mediumTitleStyle
 import com.alphaomardiallo.alphaportfolio.styles.smallTitleStyle
 import com.alphaomardiallo.alphaportfolio.utils.IndexAnchor
 import com.alphaomardiallo.alphaportfolio.utils.SitePaddings
+import com.varabyte.kobweb.compose.css.GridEntry
 import com.varabyte.kobweb.compose.css.ObjectFit
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.css.WhiteSpace
 import com.varabyte.kobweb.compose.css.boxShadow
 import com.varabyte.kobweb.compose.css.objectFit
+import com.varabyte.kobweb.compose.css.transition
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
+import com.varabyte.kobweb.compose.style.KobwebComposeStyleSheet.hover
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.color
@@ -24,9 +31,11 @@ import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import com.varabyte.kobweb.compose.ui.modifiers.whiteSpace
 import com.varabyte.kobweb.compose.ui.toAttrs
+import com.varabyte.kobweb.core.DefaultStyleSheet.style
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
+import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.href
 import org.jetbrains.compose.web.attributes.target
@@ -50,7 +59,10 @@ import org.jetbrains.compose.web.css.overflow
 import org.jetbrains.compose.web.css.padding
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.css.s
+import org.jetbrains.compose.web.css.selectors.CSSSelector
 import org.jetbrains.compose.web.css.times
+import org.jetbrains.compose.web.css.transform
 import org.jetbrains.compose.web.css.width
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Button
@@ -61,13 +73,14 @@ import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun PresentationSection(breakpoint: Breakpoint = rememberBreakpoint()) {
-
     Div(
         attrs = {
             id(IndexAnchor.home)
             style {
                 width(100.percent)
-                height(if (breakpoint >= Breakpoint.MD) CardHeights.STANDARD_CARD_HEIGHT else 200.px)
+                if (breakpoint >= Breakpoint.MD){
+                    height(CardHeights.STANDARD_CARD_HEIGHT)
+                }
             }
         }
     ) {
@@ -92,8 +105,11 @@ fun PresentationSection(breakpoint: Breakpoint = rememberBreakpoint()) {
     }
 }
 
+@OptIn(ExperimentalComposeWebApi::class)
 @Composable
 private fun AlphaPhoto(breakpoint: Breakpoint = rememberBreakpoint()) {
+    var isHovered by remember { mutableStateOf(false) } // State to track hover
+
     Img(
         src = "/alpha_diallo_photo.jpg",
         alt = "Portrait of Alpha Diallo",
@@ -102,13 +118,18 @@ private fun AlphaPhoto(breakpoint: Breakpoint = rememberBreakpoint()) {
                 maxWidth(100.percent)
                 height(if (breakpoint >= Breakpoint.MD) CardHeights.STANDARD_CARD_HEIGHT else CardHeights.REDUCED_CARD_HEIGHT)
                 borderRadius(SiteBorderRadius.STANDARD_BORDER_RADIUS)
-                property("transition", "transform 0.3s ease-in-out")
+                transform {
+                    if (isHovered) scale(1.1) else scale(1.0)
+                }
+                cursor()
             }
             onMouseOver {
-                it.target.asDynamic().style.transform = "scale(1.1)"
+                println("Mouse over Alpha!")
+                isHovered = true
             }
             onMouseOut {
-                it.target.asDynamic().style.transform = "scale(1)"
+                println("Mouse out Alpha!")
+                isHovered = false
             }
         }
     )
