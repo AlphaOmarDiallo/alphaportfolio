@@ -36,9 +36,8 @@ fun HomePage() {
 
     Box(
         modifier = Modifier
-            .padding(top = SitePaddings.MEDIUM_PADDING)
+            .padding(top = SitePaddings.MEDIUM_PADDING, bottom = SitePaddings.MEDIUM_PADDING)
             .fillMaxSize()
-            .background(Color("#F0F0F0"))
             .overflow(Overflow.Hidden),
         contentAlignment = Alignment.Center
     ) {
