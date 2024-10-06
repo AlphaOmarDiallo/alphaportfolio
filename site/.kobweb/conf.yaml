@@ -1,5 +1,8 @@
 site:
-  title: "Alpha_portfolio"
+  title: "Alpha Diallo - Android dev"
+  head:
+    styles:
+      - "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
 
 server:
   files:
@@ -11,4 +14,4 @@ server:
       script: "build/kotlin-webpack/js/productionExecutable/alphaportfolio.js"
       siteRoot: ".kobweb/site"
 
-  port: 8080
+  port: 8082
