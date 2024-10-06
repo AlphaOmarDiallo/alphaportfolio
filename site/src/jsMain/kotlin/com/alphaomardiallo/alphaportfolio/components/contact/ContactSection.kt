@@ -2,9 +2,7 @@ package com.alphaomardiallo.alphaportfolio.components.contact
 
 import androidx.compose.runtime.Composable
 import com.alphaomardiallo.alphaportfolio.components.ContactButtons
-import com.alphaomardiallo.alphaportfolio.styles.mediumTitleStyle
 import com.alphaomardiallo.alphaportfolio.styles.smallTitleStyle
-import com.alphaomardiallo.alphaportfolio.utils.CardDim
 import com.alphaomardiallo.alphaportfolio.utils.IndexAnchor
 import com.alphaomardiallo.alphaportfolio.utils.SiteBorderRadius
 import com.alphaomardiallo.alphaportfolio.utils.SitePaddings
@@ -15,14 +13,11 @@ import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import com.varabyte.kobweb.compose.ui.modifiers.whiteSpace
 import com.varabyte.kobweb.compose.ui.toAttrs
-import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toModifier
-import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.backgroundColor
 import org.jetbrains.compose.web.css.backgroundImage
 import org.jetbrains.compose.web.css.borderRadius
-import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.maxHeight
 import org.jetbrains.compose.web.css.paddingBottom
 import org.jetbrains.compose.web.css.paddingLeft

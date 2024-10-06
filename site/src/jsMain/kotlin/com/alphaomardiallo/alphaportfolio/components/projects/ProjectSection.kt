@@ -7,9 +7,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.alphaomardiallo.alphaportfolio.model.Project
-import com.alphaomardiallo.alphaportfolio.styles.largeTitleStyle
 import com.alphaomardiallo.alphaportfolio.styles.mediumTitleStyle
-import com.alphaomardiallo.alphaportfolio.styles.smallTitleStyle
 import com.alphaomardiallo.alphaportfolio.utils.IndexAnchor
 import com.alphaomardiallo.alphaportfolio.utils.SiteBorderRadius
 import com.alphaomardiallo.alphaportfolio.utils.SitePaddings
@@ -18,7 +16,6 @@ import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.css.WhiteSpace
 import com.varabyte.kobweb.compose.css.justifyContent
 import com.varabyte.kobweb.compose.ui.modifiers.color
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import com.varabyte.kobweb.compose.ui.modifiers.whiteSpace
 import com.varabyte.kobweb.compose.ui.toAttrs

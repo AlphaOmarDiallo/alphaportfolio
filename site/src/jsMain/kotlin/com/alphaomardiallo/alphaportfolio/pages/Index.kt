@@ -5,7 +5,6 @@ import androidx.compose.runtime.LaunchedEffect
 import com.alphaomardiallo.alphaportfolio.components.contact.ContactSection
 import com.alphaomardiallo.alphaportfolio.components.presentation.PresentationSection
 import com.alphaomardiallo.alphaportfolio.components.projects.ProjectSection
-import com.alphaomardiallo.alphaportfolio.components.topbar.TopAppBar
 import com.alphaomardiallo.alphaportfolio.utils.SiteMaxWidth
 import com.alphaomardiallo.alphaportfolio.utils.SitePaddings
 import com.alphaomardiallo.alphaportfolio.worker.EchoWorker
@@ -14,14 +13,12 @@ import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.background
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
 import com.varabyte.kobweb.compose.ui.modifiers.maxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.overflow
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.worker.rememberWorker
-import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
