@@ -34,7 +34,6 @@ import org.jetbrains.compose.web.css.overflow
 import org.jetbrains.compose.web.css.padding
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.css.times
 import org.jetbrains.compose.web.css.width
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Button
@@ -93,7 +92,6 @@ fun OvalTextButton(text: String, size: CSSNumeric = 40.px, onClick: () -> Unit) 
         attrs = {
             onClick { onClick() }
             style {
-                width(size * 3)
                 height(size)
                 borderRadius(SiteBorderRadius.STANDARD_BORDER_RADIUS)
                 padding(0.px)

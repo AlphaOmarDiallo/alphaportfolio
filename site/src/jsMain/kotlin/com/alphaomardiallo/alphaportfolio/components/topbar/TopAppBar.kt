@@ -5,6 +5,7 @@ import com.alphaomardiallo.alphaportfolio.styles.mediumTitleStyle
 import com.alphaomardiallo.alphaportfolio.styles.smallTitleStyle
 import com.alphaomardiallo.alphaportfolio.utils.IndexAnchor
 import com.alphaomardiallo.alphaportfolio.utils.SitePaddings
+import com.alphaomardiallo.alphaportfolio.utils.TopAppBarHeight
 import com.varabyte.kobweb.compose.css.AlignItems
 import com.varabyte.kobweb.compose.css.JustifyContent
 import com.varabyte.kobweb.compose.css.TextAlign
@@ -26,12 +27,14 @@ import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
+import kotlinx.browser.window
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.Position
 import org.jetbrains.compose.web.css.backgroundColor
 import org.jetbrains.compose.web.css.color
 import org.jetbrains.compose.web.css.display
+import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.left
 import org.jetbrains.compose.web.css.padding
 import org.jetbrains.compose.web.css.percent
@@ -44,6 +47,7 @@ import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
+import org.w3c.dom.HTMLElement
 
 /**
  * Simple top app bar component with a title and three simple menu items with anchor links.
@@ -58,6 +62,7 @@ fun TopAppBar() {
                 position(Position.Fixed)
                 top(0.px)
                 left(0.px)
+                height(TopAppBarHeight.STANDARD_TOP_APP_BAR_HEIGHT)
                 width(100.percent)
                 backgroundColor(Color.whitesmoke)
                 zIndex(100)
@@ -161,6 +166,14 @@ private fun MenuItem(href: String, text: String) {
     A(
         href = href,
         attrs = {
+            onClick {
+                val element = window.document.querySelector(href)
+                element?.let {
+                    val topBarHeight = TopAppBarHeight.STANDARD_TOP_APP_BAR_HEIGHT // Replace with the actual height of your top bar in pixels
+                    val yOffset = (it as HTMLElement).offsetTop - (topBarHeight.toString().toInt() - 30)
+                    window.scrollTo(0.0, yOffset.toDouble())
+                }
+            }
             style {
                 textDecoration("none")
                 color(Color.black)

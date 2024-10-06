@@ -34,6 +34,7 @@ kotlin {
             implementation(libs.kobweb.silk)
             implementation(libs.silk.icons.fa)
             implementation(libs.kobwebx.markdown)
+            implementation(libs.mail)
             implementation(project(":worker"))
         }
         jvmMain.dependencies {

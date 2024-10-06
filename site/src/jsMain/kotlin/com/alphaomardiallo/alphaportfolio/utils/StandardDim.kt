@@ -16,3 +16,7 @@ object CardDim {
 object SiteMaxWidth {
     val STANDARD_MAX_WIDTH = 1200.px
 }
+
+object TopAppBarHeight {
+    val STANDARD_TOP_APP_BAR_HEIGHT = 50.px
+}

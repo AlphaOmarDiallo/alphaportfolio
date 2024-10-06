@@ -2,10 +2,10 @@ package com.alphaomardiallo.alphaportfolio.pages
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import com.alphaomardiallo.alphaportfolio.components.contact.ContactSection
 import com.alphaomardiallo.alphaportfolio.components.presentation.PresentationSection
 import com.alphaomardiallo.alphaportfolio.components.projects.ProjectSection
 import com.alphaomardiallo.alphaportfolio.components.topbar.TopAppBar
-import com.alphaomardiallo.alphaportfolio.model.Project
 import com.alphaomardiallo.alphaportfolio.utils.SiteMaxWidth
 import com.alphaomardiallo.alphaportfolio.utils.SitePaddings
 import com.alphaomardiallo.alphaportfolio.worker.EchoWorker
@@ -21,12 +21,10 @@ import com.varabyte.kobweb.compose.ui.modifiers.overflow
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.worker.rememberWorker
-import kotlinx.browser.window
-import kotlinx.coroutines.await
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.json.Json
 import org.jetbrains.compose.web.css.Color
+import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.Div
 
 @Page
 @Composable
@@ -38,7 +36,7 @@ fun HomePage() {
 
     Box(
         modifier = Modifier
-            .padding(top = 70.px)
+            .padding(top = SitePaddings.MEDIUM_PADDING)
             .fillMaxSize()
             .background(Color("#F0F0F0"))
             .overflow(Overflow.Hidden),
@@ -51,15 +49,29 @@ fun HomePage() {
                 .padding(leftRight = SitePaddings.MEDIUM_PADDING),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            TopAppBar()
             Column(
                 modifier = Modifier
                     .maxWidth(SiteMaxWidth.STANDARD_MAX_WIDTH)
                     .padding(leftRight = SitePaddings.MEDIUM_PADDING)
             ){
                 PresentationSection()
+                Separator()
                 ProjectSection()
+                Separator()
+                ContactSection()
+                Separator()
             }
         }
     }
+}
+
+@Composable
+private fun Separator(){
+    Div(
+        attrs = {
+            style {
+                height(SitePaddings.MEDIUM_PADDING)
+            }
+        }
+    )
 }
